@@ -1,6 +1,6 @@
 ![image](images/microchip.jpg) 
 
-## %repoDescritpion%
+## an957 sensored bldc motor control
 
 Board Image if any.
 
