@@ -1,33 +1,39 @@
 ![image](images/microchip.jpg) 
 
-## an957 sensored bldc motor control
+## AN957 Sensored BLDC Motor Control
 
 
-## BLDC MOTORS
+## INTRODUCTION
+Brushless DC motor (BLDC) is a type of a Permanent Magnet Synchronous Motor (PMSM). It is named ‘Brushless DC’ as there are no brushes involved in commutation and instead it is commutated electronically. To rotate the BLDC motor, the stator windings should be energized in a sequence. It is important to know the rotor position to energize the winding in the correct sequence to rotate the motor.
 
+In this application, Hall effect sensor feedback from the motor is used to determine the rotor position. Whenever the rotor magnetic poles pass near the Hall sensors, they give a high or low signal, indicating the N or S pole of the rotor. Based on the combination of these three Hall sensor signals, rotor is commutated according to the six-step commutation scheme.
 
-<p style='text-align: justify;'>BLDC motors are basically inside-out DC motors. In a DC motor the stator is a permanent magnet. The rotorhas the windings, which are excited with a current.The current in the rotor is reversed to create a rotating or moving electric field by means of a split commutator and brushes. On the other hand, in a BLDC motor the windings are on the stator and the rotor is a permanent magnet. Hence the term inside-out DC motor.To make the rotor turn, there must be a rotating electric field. Typically a three-phase BLDC motor has three stator phases that are excited two at a time to create a rotating electric field. This method is fairly easy to implement, but to prevent the permanent magnet rotor from getting locked with the stator, the excitation on the stator must be sequenced in a specific manner while knowing the exact position of the rotor magnets.Position information can be gotten by either a shaft encoder or, more often, by Hall effect sensors that detect the rotor magnet position. For a typical threephase, sensored BLDC motor there are six distinct regions or sectors in which two specific windings are excited. 
-These are as shown in Figure 1.</p>
-
- 
+The following figures show the simplified block diagram and an example of Hall sensor signals with respect to back EMF.
 
 <p align="center">
 <img  src="images/figure1.png"></p>
-<p align = "center"> Figure 1  BLDC commutation diagram
-</p> 
-<br />
+<p align="center">
+<img  src="images/figure2.png"></p>
 
- 
+The various dsPIC™ DSC families can be used to demonstrate AN957 application firmware using one of the Microchip Motor Control Development Boards. The following table summarizes Devices, Development Boards, and the source codes.
 
-<p style='text-align: justify;'>By reading the Hall effect sensors, a 3-bit code can be obtained with values ranging from 1 to 6.Each code value represents a sector on which the rotor is presently located. Each code value, therefore, gives us information on which windings need to be excited.Thus a simple lookup table can be used by the program to determine which two specific windings to excite and, thus, turn the rotor.
-Note that state ‘0’ and ‘7’ are invalid states for Hall effect sensors. Software should check for these values and appropriately disable the PWM.</p>
+| Device |Development Board|Source Code |
+| :----------:| :-------:|:----:|
+| dsPIC33CK256MP508 ([DS70005349](https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CK256MP508-Family-Data-Sheet-DS70005349H.pdf))|dsPIC33CK Motor Control Starter Kit (MCSK) ([EV62P66A](https://www.microchip.com/en-us/development-tool/EV12F76A))| [mcsk-an957-dspic33ck256mp508](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.motor-control-and-drive.motor-types.brushless-dc-bldc/com.microchip.mplabx.project.mcsk-an957-dspic33ck256mp508/1.0.1?view=about&dsl=an957)    |
+| dsPIC33CK256MP508 ([DS70005349](https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CK256MP508-Family-Data-Sheet-DS70005349H.pdf))| DSPIC33CK Low Voltage Motor Control (LVMC) Development Board ([DM330031](https://www.microchip.com/en-us/development-tool/dm330031)) |[lvmc-dspic33ck256mp508-an957](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.modules-and-peripherals.analog.adc-modules.adc/com.microchip.mplabx.project.lvmc-dspic33ck256mp508-an957/1.0.0?view=about&dsl=an957t)|
+| dsPIC33CK256MP508 ([DS70005349](https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33CK256MP508-Family-Data-Sheet-DS70005349H.pdf))|MCS MCLV-48V-300W Development Board([EV18H47A](https://www.microchip.com/en-us/development-tool/ev18h47a)) + dsPIC33CK256MP508 Motor Control DIM ([EV62P66A](https://www.microchip.com/en-us/development-tool/ev62p66a))| [mclv-48v-300w-an957-dspic33ck256mp508](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.modules-and-peripherals.analog.adc-modules.adc/com.microchip.mplabx.project.mclv-48v-300w-an957-dspic33ck256mp508/1.0.0?view=about&dsl=an957)|
 
- 
 
-### Change Notification Inputs
-<p style='text-align: justify;'>
-Taking this technique a step further, the Hall effect sensors can be connected to dsPIC inputs that detect a change (Change Notification (CN) inputs).
-An input change on these pins generates an interrupt. In the CN Interrupt Service Routine (ISR) the user application program reads the Hall effect sensor value
-and uses it to generate an offset in the lookup table for driving the windings of the BLDC motor.</p>
+ ## REFERENCES:
+
+For additional information, refer following documents or links.
+
+1. AN957 Application Note “[Sensored BLDC Motor Control](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ApplicationNotes/ApplicationNotes/BLDCMC00957a.pdf)”
+
+2. [Six-Step Commutation PWM Switching Schemes for dsPIC Digital Signal Controllers](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.matlab.project/com.microchip.subcategories.motor-control-and-drive/com.microchip.matlab.project.matlab-dspic33ck-curiosityboard-pwmexample-sixstep-commutation/1.0.1?view=about)
+
+
+
+
 
 
