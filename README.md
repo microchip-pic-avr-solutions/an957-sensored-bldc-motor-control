@@ -2,11 +2,10 @@
 
 ## AN957 Sensored BLDC Motor Control
 
-
 ## INTRODUCTION
 Brushless DC motor (BLDC) is a type of a Permanent Magnet Synchronous Motor (PMSM). It is named ‘Brushless DC’ as there are no brushes involved in commutation and instead it is commutated electronically. To rotate the BLDC motor, the stator windings should be energized in a sequence, and this requires the rotor position information.
 
-Microchip AN957 application note uses Hall effect sensor feedback from the motor to determine the rotor position. Whenever the rotor magnetic poles pass near the Hall sensors, they give a high or low signal, indicating the N or S pole of the rotor. Based on the combination of these three Hall sensor signals, rotor is commutated according to the six-step commutation scheme.
+Microchip AN957 application note uses Hall effect sensor feedback from the motor to determine the rotor position. Whenever the rotor magnetic poles pass near the Hall sensors, they give a high or low signal, indicating the North or South pole of the rotor. Based on the combination of these three Hall sensor signals, rotor is commutated according to the six-step commutation scheme.
 
 The following figures show the simplified block diagram and an example of Hall sensor signals with respect to back EMF.
 
