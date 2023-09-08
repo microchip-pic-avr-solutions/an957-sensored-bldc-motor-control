@@ -32,7 +32,7 @@ For additional information, refer following documents or links.
 
 2. [Six-Step Commutation PWM Switching Schemes for dsPIC Digital Signal Controllers](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.ide.project/com.microchip.subcategories.modules-and-peripherals.timing-counting-and-signal-generation.pwm-modules.pwm/com.microchip.mplabx.project.dspic33ck-curiosityboard-pwmexample-sixstep-commutation/1.0.0?view=about&dsl=PWM+AND+Peripheral+AND+Example+AND+for+AND+Six+AND+Step+AND+Commutation+AND+for+AND+BLDC+AND+Motor)
 
-
+3. [Six-Step Commutation PWM Switching Schemes for dsPIC Digital Signal Controllers using MATLAB Simulink](https://mplab-discover.microchip.com/v2/item/com.microchip.code.examples/com.microchip.matlab.project/com.microchip.subcategories.modules-and-peripherals.timing-counting-and-signal-generation.pwm-modules.pwm/com.microchip.matlab.project.matlab-dspic33ck-curiosityboard-pwmexample-sixstep-commutation/1.0.1?view=about)
 
 
 
